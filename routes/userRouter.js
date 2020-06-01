@@ -40,6 +40,11 @@ router.post('/register', json, (req, res) => {
     })
 })
 
+router.delete('/logout', (req, res) => {
+    req.logOut()
+    res.send('logged out')
+})
+
 //using a default middle ware function for login
 router.post('/login', json, passport.authenticate('local'),(req, res) => {
     res.send('Authorized')
