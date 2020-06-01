@@ -6,6 +6,20 @@ const add = (user) => {
     return User.create(user)
 }
 
+const getUserByEmail = (email) => {
+    const query = {
+        email: email
+    }
+
+    return User.findOne(query)
+}
+
+const getUserById = (id) => {
+    return User.findById(id)
+}
+
 module.exports = {
-    add: add
+    add: add,
+    getUserByEmail: getUserByEmail,
+    getUserById: getUserById
 }
